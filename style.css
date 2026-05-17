@@ -18,25 +18,48 @@ header{
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 20px;
+    padding: 10px 10px;
+    backdrop-filter: blur(12px);
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-header i{
-    color: #fff;
-    font-size: 2em;
+.logo i{
+    color: #3ca;
+    font-size: 1.2em;
     font-weight: 800;
+}
+
+.close-icon
+{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-icon i{
+    color: grey;
+}
+
+.close-icon:hover{
+    background-color: #eb3141d7;
+    color: #fff;
 }
 
 header a{
     text-decoration: none;
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.5em;
+    font-size: 1em;
     font-weight: 800;
 }
 
 .container{
-    padding: 80px 20px;
+    padding: 48px 0px;
     display: flex;
     background-color: #0f172a;
     height: 100vh;
@@ -44,7 +67,7 @@ header a{
 
 aside{
     width: 300px;
-    height: 90vh;
+    height: 94vh;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding: 0;
     display: flex;
@@ -52,6 +75,7 @@ aside{
     flex-direction: column;
     font-weight: 600;
     justify-content: space-between;
+    background-color: #292830;
 }
 
 aside ul{
@@ -84,12 +108,16 @@ aside i{
     color: #50C878;
 }
 
+.tasks-aside i{
+    color: #3a6cf4;
+}
+
 aside li:hover{
     background-color: rgba(255,255,255,0.1);
 }
 
-.navigation{
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.block-new-list-btn{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .new-list-btn{
@@ -101,6 +129,8 @@ aside li:hover{
     padding: 14px;
     cursor: pointer;
     transition: 0.3 ease;
+    width: 100%;
+    height: 100%;
 }
 
 .new-list-btn:hover{
@@ -109,6 +139,117 @@ aside li:hover{
 
 .main{
     width: 100%;
-    height: 100vh;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    height: 94vh;
+    background-color: #28211e;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-main{
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #fff;
+}
+
+.header-main h3{
+    color: #fff;
+    font-size: 2em;
+
+}
+
+.main-inner{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.main-icon{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-text{
+    padding-top: 15px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #3a6cf4;
+}
+
+.main-text h4{
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.main-text p{
+    font-size: 15px;
+}
+
+.main-image{
+    width: 220px;
+    opacity: 0.9;
+}
+
+.task-input-container{
+    padding: 20px 40px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.task-input-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: rgba(0,0,0,0.2); 
+    backdrop-filter: blur(20px);
+    padding: 12px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.2s;
+}
+
+.task-input-wrapper:focus-within{
+    background-color: rgba(0, 0,0, 0.3);
+    border-color: rgba(0, 120, 212, 0.5);
+    box-shadow: 0 0 20px  rgba(0, 120, 212, 0.2); 
+}
+
+.task-check-box{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #fff;
+    cursor: pointer;
+}
+
+.task-input{
+    background: transparent;
+    flex: 1;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.task-check-box:hover{
+    border-color: rgba(255, 255, 255, 0.5)
+}
+
+.task-input:focus-within{
+    border: none;
 }

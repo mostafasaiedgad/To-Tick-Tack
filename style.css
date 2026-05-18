@@ -8,6 +8,7 @@
 
 body{
     background-color: #0f172a;
+    height: 100vh;
 }
 
 header{
@@ -108,6 +109,10 @@ aside i{
     color: #50C878;
 }
 
+.custom-list i{
+    color: grey;
+}
+
 .tasks-aside i{
     color: #3a6cf4;
 }
@@ -141,8 +146,9 @@ aside li:hover{
     width: 100%;
     height: 94vh;
     background-color: #28211e;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 .header-main{

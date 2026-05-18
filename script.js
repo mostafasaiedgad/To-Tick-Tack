@@ -49,7 +49,7 @@ document.getElementById("important-aside").addEventListener('click', function(){
                         </div>
                     </div>
     
-    `
+    `;
 });
 
 document.getElementById("planned-aside").addEventListener('click', function(){
@@ -57,7 +57,6 @@ document.getElementById("planned-aside").addEventListener('click', function(){
 
                     <div class="header-main">
                         <h3>Planned</h3>
-                        <span id="current-date">${currentDate}</span>
                     </div>
 
                     <div class="main-inner">
@@ -70,5 +69,55 @@ document.getElementById("planned-aside").addEventListener('click', function(){
                         </div>
                     </div>
 
-    `
+    `;
+});
+
+document.getElementById("tasks-aside").addEventListener('click', function() {
+    document.getElementById("main-body").innerHTML = `
+    
+                    <div class="header-main">
+                        <h3>Tasks</h3>
+                    </div>
+
+                    <div class="main-inner">
+                        <div class="main-icon">
+
+                        </div>
+                    </div>
+    
+    `;
+});
+
+const navList = document.getElementById("nav-ul");
+
+let lists = JSON.parse(localStorage.getItem("lists")) || [];
+
+function createList(listName) {
+
+    if (!listName) return;
+
+    const li = document.createElement("li");
+    li.classList.add("custom-list");
+
+    li.innerHTML = `
+        <i class="fa-solid fa-bars"></i>
+        <p>${listName}</p>
+    `;
+
+    navList.appendChild(li);
+}
+
+lists.forEach(list => {
+    createList(list);
+});
+
+document.getElementById("new-list-btn").addEventListener('click', function() {
+
+    const listName = prompt("Enter The List Name: ");
+
+    createList(listName);
+
+    lists.push(listName);
+
+    localStorage.setItem("lists", JSON.stringify(lists));
 });

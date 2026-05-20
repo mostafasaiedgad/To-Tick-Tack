@@ -100,9 +100,52 @@ function createList(listName) {
     li.classList.add("custom-list");
 
     li.innerHTML = `
-        <i class="fa-solid fa-bars"></i>
-        <p>${listName}</p>
+        <div class="list-name-aside">
+            <i class="fa-solid fa-bars"></i>
+            <p>${listName}</p>
+        </div>
+        <div class="delete-icon">
+            <i class="bi bi-trash3"></i>
+        </div>
     `;
+
+    li.id = listName;
+
+    li.addEventListener('click', function () {
+        document.getElementById("main-body").innerHTML = `
+        
+                    <div class="header-main">
+                        <h3>${listName}</h3>
+                    </div>
+
+                    <div class="main-inner">
+                        <div class="main-icon">
+
+                        </div>
+                    </div>
+
+        `;
+
+
+    });
+
+    const deleteBtn = li.querySelector(".delete-icon");
+
+    deleteBtn.addEventListener('click', function(e) {
+
+        e.stopPropagation();
+
+        const confirmDlete = confirm(`Delete "${listName}" ?`);
+
+        if (!confirmDlete) return;
+        
+        li.remove();
+
+        lists = lists.filter(list => list !== listName);
+
+        localStorage.setItem("lists", JSON.stringify(lists));
+
+    });
 
     navList.appendChild(li);
 }

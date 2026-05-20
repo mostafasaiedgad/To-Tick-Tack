@@ -81,6 +81,7 @@ aside{
 
 aside ul{
     list-style: none;
+    padding-top: 15px;
 }
 
 aside li{
@@ -98,7 +99,7 @@ aside i{
 }
 
 .myday-aside i{
-    color: grey;
+    color: #3a6cf4;
 }
 
 .important-aside i{
@@ -107,6 +108,10 @@ aside i{
 
 .planned-aside i{
     color: #50C878;
+}
+
+.custom-list {
+    justify-content: space-between;
 }
 
 .custom-list i{
@@ -119,6 +124,25 @@ aside i{
 
 aside li:hover{
     background-color: rgba(255,255,255,0.1);
+}
+
+.list-name-aside{
+    display: flex;
+    gap: 20px;
+    padding-left: 3px;
+}
+
+.delete-icon{
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+
+.delete-icon:hover{
+    background-color: red;
 }
 
 .block-new-list-btn{

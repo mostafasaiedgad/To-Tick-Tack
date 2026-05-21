@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>To-Tick-Tack</title>
+        <link rel="icon" type="image/svg+xml" href="imgs/patch-check-fill.svg">
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width", intial-scale="1.0">
         <link rel="stylesheet" href="style.css">
@@ -60,7 +61,7 @@
                         <span id="current-date"></span>
                     </div>
 
-                    <div class="main-inner">
+                    <div class="main-inner" id="main-inner">
                         <div class="main-icon">
                             <img src="imgs/calendar.png" alt="imgage loading" class="main-image">
                             <div class="main-text">
@@ -74,13 +75,13 @@
 
                 <div class="task-input-container">
                     <div class="task-input-wrapper">
-                        <div class="task-check-box"></div>
+                        <div class="task-check-box" id="task-check-box"></div>
                         <input type="text" class="task-input" id="task-input" placeholder="Try Typing">
                     </div>
                 </div>
             </section>
         </section>
 
-        <script src="script.js"></script>
+        <script src="script.js" defer></script>
     </body>
 </html>

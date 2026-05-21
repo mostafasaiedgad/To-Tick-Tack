@@ -164,3 +164,35 @@ document.getElementById("new-list-btn").addEventListener('click', function() {
 
     localStorage.setItem("lists", JSON.stringify(lists));
 });
+
+
+const task_input = document.getElementById("task-input");
+
+document.getElementById("task-check-box").addEventListener('click', addTask);
+
+task_input.addEventListener('keydown', function(event) {
+    if (event.key === "Enter")
+    {
+        event.preventDefault();
+        addTask();
+    }
+});
+
+function addTask()
+{
+    const task = document.createElement("div");
+    
+    task.innerHTML = `
+        <div class="task-wrapper"> 
+            <div class="task-check-box"></div>
+            <p>${task_input.value}</p>
+            <i class="bi bi-star"></i>
+            <i class="bi bi-trash"></i>
+        </div>
+    `;
+
+    task.classList.add("task-container");
+
+    document.getElementById("main-inner").appendChild(task);
+    task_input.value = "";
+}
